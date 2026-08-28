@@ -14,4 +14,6 @@ export async function main(ns) {
   ns.scp(["dameons/dameon-cloud.js", "dameons/dameon-hacknet.js"], "sigma-cosmetics", "home");
   ns.exec("dameons/dameon-cloud.js", "sigma-cosmetics");
   ns.exec("dameons/dameon-hacknet.js", "sigma-cosmetics");
+
+  ns.hacknet.purchaseNode();
 }
