@@ -52,6 +52,10 @@ export async function main(ns) {
       const cost = ns.cloud.getServerUpgradeCost(server, newRam);
 
       if (ns.getServerMoneyAvailable("home") > cost && budget > cost) {
+        ns.print(`CLOUD: Profit to date: ${profit}`);
+        ns.print(`CLOUD: Cost to date: ${cloudCost}`);
+        ns.print(`CLOUD: Budget to date: ${budget}`);
+        ns.print(`CLOUD: Cost of upgrade: ${cost}`);
         ns.print(`CLOUD: Upgrading ${server} from ${currentRam}GB → ${newRam}GB`);
         cloudCost += cost;
         ns.cloud.upgradeServer(server, newRam);
